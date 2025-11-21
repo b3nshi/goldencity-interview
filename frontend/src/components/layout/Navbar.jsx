@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
 
 const SCROLL_THRESHOLD = 50;
@@ -9,7 +9,15 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const location = useLocation();
   const { theme, toggleTheme } = useTheme();
+
+  const isActive = (href) => {
+    if (href === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.startsWith(href);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,9 +114,16 @@ function Navbar() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-secondary-600 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                    isActive(item.href)
+                      ? "text-primary-600 dark:text-primary-400"
+                      : "text-secondary-600 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400"
+                  }`}
                 >
                   {item.name}
+                  {isActive(item.href) && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-200" />
+                  )}
                 </Link>
               ))}
               <button
@@ -143,19 +158,26 @@ function Navbar() {
           {/* Mobile Navigation */}
           {isOpen && (
             <div className="md:hidden border-t border-secondary-200 dark:border-secondary-700">
-              <div className="pt-2 pb-3 space-y-1">
+              <div className="pt-2 pb-3">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="block px-3 py-2 text-base font-medium text-secondary-600 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-secondary-800 transition-colors duration-200"
+                    className={`relative block px-3 py-4 text-base font-medium transition-colors duration-200 text-center leading-relaxed ${
+                      isActive(item.href)
+                        ? "text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-secondary-800"
+                        : "text-secondary-600 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-secondary-800"
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
+                    {isActive(item.href) && (
+                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-200" />
+                    )}
                   </Link>
                 ))}
                 <button
-                  className="block px-3 py-2 text-base font-medium text-white bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 transition-colors duration-200"
+                  className="block w-full px-3 py-4 text-base font-medium text-white bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 transition-colors duration-200 text-center leading-relaxed"
                   onClick={() => setIsOpen(false)}
                 >
                   Connect

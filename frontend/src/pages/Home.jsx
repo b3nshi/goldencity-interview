@@ -329,13 +329,13 @@ function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-secondary-900 dark:bg-secondary-50 text-white dark:text-secondary-900 py-16 transition-colors duration-300">
+      <section className="bg-secondary-900 dark:bg-secondary-700 text-white py-16 transition-colors duration-300">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 dark:text-secondary-900">
+            <h2 className="text-3xl font-bold mb-4 dark:text-secondary-100">
               How GoldenCity Works
             </h2>
-            <p className="text-secondary-300 dark:text-secondary-600">
+            <p className="text-secondary-300 dark:text-secondary-300">
               Understanding our tokenized real estate platform
             </p>
           </div>
