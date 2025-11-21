@@ -478,11 +478,11 @@ function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 md:pb-16">
             {advantages.map((advantage, index) => (
               <motion.div
                 key={index}
-                className="bg-white dark:bg-secondary-900 p-6 rounded-lg shadow-md text-center transition-colors duration-300 last-of-type:mb-10"
+                className="bg-white dark:bg-secondary-900 p-6 rounded-lg shadow-md text-center transition-colors duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
