@@ -9,6 +9,7 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const navbarRef = useRef(null);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
 
@@ -61,8 +62,21 @@ function Navbar() {
     }
   }, [isScrolled]);
 
+  useEffect(() => {
+    if (isOpen && isScrolled) {
+      setIsVisible(true);
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, 100);
+    }
+  }, [isOpen, isScrolled]);
+
   return (
     <div
+      ref={navbarRef}
       className={`transition-all duration-300 ${
         isScrolled ? "sticky top-0 z-50" : "relative"
       }`}
