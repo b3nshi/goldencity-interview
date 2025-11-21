@@ -1,104 +1,132 @@
 {
-  "info": {
-    "_postman_id": "b131435a-32fd-4755-972b-8e8a09146256",
-    "name": "GoldenCity",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "6095047",
-    "_collection_link": "https://klivrcom.postman.co/workspace/Ualki~05bdc921-2b0a-4702-aa1b-ae26e2548b60/collection/6095047-b131435a-32fd-4755-972b-8e8a09146256?action=share&source=collection_link&creator=6095047"
-  },
-  "item": [
-    {
-      "name": "Create new note",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"title\": \"Title of the Note 2\",\n    \"note\": \"Content of Note 2\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:3000/api/notes",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "notes"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Notes",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/api/notes",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "notes"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Get Note By ID",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/api/notes/22fe8a4f-f081-48ed-afaf-2df3b848a455",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "notes", "22fe8a4f-f081-48ed-afaf-2df3b848a455"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Update Note By ID",
-      "request": {
-        "method": "PUT",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"title\": \"New Title\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:3000/api/notes/22fe8a4f-f081-48ed-afaf-2df3b848a455",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "notes", "22fe8a4f-f081-48ed-afaf-2df3b848a455"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Update Note By ID Copy",
-      "request": {
-        "method": "DELETE",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/api/notes/22fe8a4f-f081-48ed-afaf-2df3b848a455",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "notes", "22fe8a4f-f081-48ed-afaf-2df3b848a455"]
-        }
-      },
-      "response": []
-    }
-  ]
+	"info": {
+		"_postman_id": "b131435a-32fd-4755-972b-8e8a09146256",
+		"name": "GoldenCity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6095047",
+		"_collection_link": "https://klivrcom.postman.co/workspace/Ualki~05bdc921-2b0a-4702-aa1b-ae26e2548b60/collection/6095047-b131435a-32fd-4755-972b-8e8a09146256?action=share&source=collection_link&creator=6095047"
+	},
+	"item": [
+		{
+			"name": "Create new note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Title of the Note 2\",\n    \"note\": \"Content of Note 2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Note By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/notes/22fe8a4f-f081-48ed-afaf-2df3b848a455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"notes",
+						"22fe8a4f-f081-48ed-afaf-2df3b848a455"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Note By ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"New Title\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/notes/22fe8a4f-f081-48ed-afaf-2df3b848a455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"notes",
+						"22fe8a4f-f081-48ed-afaf-2df3b848a455"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Note By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/notes/22fe8a4f-f081-48ed-afaf-2df3b848a455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"notes",
+						"22fe8a4f-f081-48ed-afaf-2df3b848a455"
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }
